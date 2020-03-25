@@ -1,0 +1,104 @@
+/* set the root theme and color variables */
+:root {
+    --text-primary: black;
+    --bg-primary: #fff;
+}
+
+/* the different page themes and color variables */
+html[data-theme='light'] {
+    --text-primary: black;
+    --bg-primary: #fff;
+}
+  
+html[data-theme='dark'] {
+    --text-primary: #fff;
+    --bg-primary: #000;
+}
+
+/* set body stylings */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    font-size: 18pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--bg-primary);
+    color:var(--text-primary);
+}
+
+/* use flex to center all content on the page */
+.container {
+    padding: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* set styling for the toggle */
+.toggler {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 68px;
+}
+
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5c5c5c;
+    -webkit-transition: .4s;
+    transition: .4s;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+
+/* set stylings for the round toggle and set the transition time of the toggle movement */
+.toggle:before {
+    position: absolute;
+    content: "";
+    height: 52px;
+    width: 52px;
+    left: 8px;
+    bottom: 8px;
+    background-color: white;
+    -webkit-transition: .6s;
+    transition: .6s;
+}
+
+/* change the round toggle color when the input is "checked" */
+input:checked + .toggle {
+    background-color: orange;
+}
+
+/* toggle transform to move the toggle when clicked */
+input:checked + .toggle:before {
+    -webkit-transform: translateX(52px);
+    -ms-transform: translateX(42px);
+    transform: translateX(52px);
+}
+
+/* make the toggle round */
+.toggle.round {
+    border-radius: 34px;
+}
+
+.toggle.round:before {
+    border-radius: 50%;
+}
+
+/* set the text to display none for jQuery fadeIn */
+.reveal1 {
+    display: none;
+}
+
+.reveal2 {
+    display: none;
+}
